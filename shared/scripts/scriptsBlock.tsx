@@ -4,6 +4,7 @@ import { useBaseStore } from '@/shared/store/baseStore';
 import { useEffect } from 'react';
 export const ScriptsBlock = () => {
   const setTg = useBaseStore((state) => state.setTg);
+  console.log(setTg);
   useEffect(() => {
     console.log('useTelegram');
     function initTg() {

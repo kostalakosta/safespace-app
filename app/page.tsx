@@ -2,7 +2,7 @@
 import useBaseStore from '@/shared/store/baseStore';
 
 export default function HomePage() {
-  const tg = useBaseStore((state) => state.tg);
-  console.log(tg);
-  return <div>Home page 2 - </div>;
+  const userId = useBaseStore((state) => state.userId);
+  console.log(userId);
+  return <div>Home page 2 - {userId}</div>;
 }

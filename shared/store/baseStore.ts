@@ -8,10 +8,19 @@ interface BaseState {
   removeUserId: () => void;
 }
 
-interface TelegramWebApp {
+export interface TelegramWebApp {
   ready: () => void;
   expand: () => void;
   sendData: (data: string) => void;
+  headerColor: string;
+}
+
+declare global {
+  interface Window {
+    Telegram: {
+      WebApp: TelegramWebApp;
+    };
+  }
 }
 
 const useBaseStore = create<BaseState>((set) => ({

@@ -1,6 +1,6 @@
 'use client';
 import Script from 'next/script';
-import useBaseStore from '@/shared/store/baseStore';
+import useBaseStore, { TelegramWebApp } from '@/shared/store/baseStore';
 import { useEffect } from 'react';
 export const ScriptsBlock = () => {
   const setTg = useBaseStore((state) => state.setTg);
@@ -10,8 +10,9 @@ export const ScriptsBlock = () => {
     function initTg() {
       if (typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp) {
         console.log('Telegram WebApp is set');
-        const tgData = window.Telegram.WebApp;
+        const tgData: TelegramWebApp = window.Telegram.WebApp;
         tgData.ready();
+        tgData.headerColor = '#EEEEEE';
         tgData.expand();
         setTg(tgData);
       } else {

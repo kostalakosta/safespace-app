@@ -1,5 +1,5 @@
 'use client';
-import { useBaseStore } from '@/shared/store/baseStore';
+import useBaseStore from '@/shared/store/baseStore';
 
 export default function HomePage() {
   const tg = useBaseStore((state) => state.tg);

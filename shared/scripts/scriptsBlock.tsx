@@ -1,6 +1,6 @@
 'use client';
 import Script from 'next/script';
-import { useBaseStore } from '@/shared/store/baseStore';
+import useBaseStore from '@/shared/store/baseStore';
 import { useEffect } from 'react';
 export const ScriptsBlock = () => {
   const setTg = useBaseStore((state) => state.setTg);
